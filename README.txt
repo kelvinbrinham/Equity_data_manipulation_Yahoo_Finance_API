@@ -8,12 +8,10 @@ NB: THIS IS AN EXERCISE IN DATA MANIPULATION AND API USE, HENCE THE MISSING DATA
 
 Instructions:
 
-1. 1. Create a folder to hold the equity data we will retrieve from the
-API (in the form of xlsx files). It is currently called 'Data' in my code.
+1. Run Retrieving_data.py. The file paths should work within this working directory. I've included the data this code produces to save time
+if you want to try out the second script on it's own. Just make sure to change the file paths in Creating_Output_Spreadsheet.py. to Data_Example rather than Data.
 
-2. Run Retrieving_data.py. Ensure to update the file paths/names on lines 12 and 89. 
-
-3. Run Creating_Output_Spreadsheet.py. Ensure to update the file paths/names on lines 15, 23, 29, 44 and 52.
+2. Run Creating_Output_Spreadsheet.py. 
 
 
 Retrieving_data.py pulls data from Yahoo Finance using the yfinance Python package. This script downloads the data and saves the previous four 
