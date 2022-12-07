@@ -9,7 +9,7 @@ import datetime
 from datetime import datetime as dt
 
 #Load in the universe spreadsheet as a dataframe
-universe_df = pd.read_excel(r'/Users/kelvinbrinham/Desktop/Python_practice/Aperture_Task_1/Universe.xlsx')
+universe_df = pd.read_excel(r'Universe.xlsx')
 
 #List of Tickers from spreadsheet
 Ticker_list = list(universe_df['Ticker'])
@@ -86,4 +86,4 @@ if __name__ == '__main__':
         Stock_Earning_Dates_DataFrame['Financial Report Release Date'] = Stock_Earning_Dates_Valid
 
         #Write the earning dates for an individual stocks to an Excel sheet
-        Stock_Earning_Dates_DataFrame.to_excel(f'/Users/kelvinbrinham/Desktop/Python_practice/Aperture_task_1_Yahoo/Output_quarterly/{Ticker}.xlsx', sheet_name='Sheet1')
+        Stock_Earning_Dates_DataFrame.to_excel(f'Data/{Ticker}.xlsx', sheet_name='Sheet1')

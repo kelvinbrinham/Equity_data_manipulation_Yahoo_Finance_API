@@ -12,7 +12,7 @@ from Retrieving_data import Ticker_list_stripped #Import the list of tickers
 
 
 #Load the Universe spreadsheet
-Universe_wb = load_workbook('/Users/kelvinbrinham/Desktop/Python_practice/Equity_data_manipulation_Yahoo_Finance_API/Universe.xlsx')
+Universe_wb = load_workbook('Universe.xlsx')
 #Add column for links to each ticker sheet in the universe workbook
 Universe_wb['Sheet1'].cell(row=1, column=3).value = "Quarterly Earning dates (UTC)"
 
@@ -20,13 +20,13 @@ Universe_wb['Sheet1'].cell(row=1, column=3).value = "Quarterly Earning dates (UT
 i = 1
 for Ticker in Ticker_list_stripped:
     i += 1
-    Ticker_wb_exists = exists(f'/Users/kelvinbrinham/Desktop/Python_practice/Equity_data_manipulation_Yahoo_Finance_API/Data/{Ticker}.xlsx')
+    Ticker_wb_exists = exists(f'Data/{Ticker}.xlsx')
     if not Ticker_wb_exists:
         Universe_wb['Sheet1'].cell(row=i, column=3).value = 'N/D' #Add No Data to relevant stocks
         continue
 
     #Load the Ticker earning date workbook
-    Ticker_wb = load_workbook(f'/Users/kelvinbrinham/Desktop/Python_practice/Equity_data_manipulation_Yahoo_Finance_API/Data/{Ticker}.xlsx')
+    Ticker_wb = load_workbook(f'Data/{Ticker}.xlsx')
     #Load the Ticker earning date worksheet
     Ticker_ws = Ticker_wb.active
 
@@ -41,7 +41,7 @@ for Ticker in Ticker_list_stripped:
             Universe_wb_Ticker_ws[cell.coordinate].value = cell.value
 
     #Link to the output universe workbook ticker worksheeta
-    link = f'/Users/kelvinbrinham/Desktop/Python_practice/Equity_data_manipulation_Yahoo_Finance_API/Universe_OUTPUT.xlsx#{Ticker}!A1'
+    link = f'Universe_OUTPUT.xlsx#{Ticker}!A1'
 
     #Add links to each ticker worksheet within the universe workbook
     Universe_wb['Sheet1'].cell(row=i, column=3).hyperlink = link
@@ -49,4 +49,4 @@ for Ticker in Ticker_list_stripped:
     Universe_wb['Sheet1'].cell(row=i, column=3).style = "Hyperlink"
 
 #Save the output universe workbook
-Universe_wb.save('/Users/kelvinbrinham/Desktop/Python_practice/Equity_data_manipulation_Yahoo_Finance_API/Universe_OUTPUT.xlsx')
+Universe_wb.save('Universe_OUTPUT.xlsx')
