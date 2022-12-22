@@ -2,7 +2,7 @@ My code consists of 2 scripts:
 Retrieving_data.py
 Creating_Output_Spreadsheet.py
 
-NB: THIS IS AN EXERCISE IN DATA MANIPULATION AND API USE, HENCE THE MISSING DATA ETC.
+NB: THIS IS AN EXERCISE IN DATA MANIPULATION AND API USE (USING A FREE API), HENCE THE MISSING DATA ETC.
 
 ------------------
 
