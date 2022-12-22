@@ -1,3 +1,6 @@
+# Equity_data_manipulation_Yahoo_Finance_API
+
+
 My code consists of 2 scripts:
 Retrieving_data.py
 Creating_Output_Spreadsheet.py
